@@ -1,0 +1,15 @@
+class RespTable(BaseTable):
+    pk = ToggleColumn()
+    name = tables.LinkColumn(
+        viewname='plugins:sdns:resp_edit',
+        args=[Accessor('pk')]
+    )
+
+    class Meta(BaseTable.Meta):
+        model = Resp
+        fields = (
+            'pk',
+            'name',
+            'tipo',
+            'dom',
+        )

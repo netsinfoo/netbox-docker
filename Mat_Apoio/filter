@@ -1,0 +1,54 @@
+class RespFilter(BaseFilterSet,NameSlugSearchFilterSet):
+    q = django_filters.CharFilter(
+        method="search",
+        label="Search",
+    )
+
+    name =  django_filters.CharFilter(
+        method = 'filter_name',
+        label = 'Nome do dominio'
+    )
+
+    tipo =  django_filters.CharFilter(
+        method = 'filter_tipo',
+        label = 'Tipo de dominio'
+    )
+
+    dom =  django_filters.CharFilter(
+        method = 'filter_dom',
+        label = 'nome de dominio'
+    )
+
+
+    class Meta:
+        model = Register
+        fields = [
+            'dom',
+            'name',
+            'tipo',
+        ]
+
+    def search(self, queryset, name, value):
+        if not value.strip():
+            return queryset
+
+        qs_filter = (
+            Q(name__icontains=value)
+            | Q(tipo__icontains=value)
+            | Q(dom__icontains=value)
+        )
+
+        return queryset.filter(qs_filter)
+
+    def filter_name(self, queryset, name, value):
+        try:
+            return queryset.filter(name=(value))
+        except ValidationError:
+            return queryset.none()
+
+
+    def filter_dom(self, queryset, name, value):
+        try:
+            return queryset.filter(dom=(value))
+        except ValidationError:
+            return queryset.none()

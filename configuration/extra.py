@@ -47,9 +47,11 @@
 #     'AWS_STORAGE_BUCKET_NAME': 'netbox',
 #     'AWS_S3_REGION_NAME': 'eu-west-1',
 # }
+DEBUG = TEMPLATE_DEBUG = True
+TIME_ZONE = 'America/Recife'
 
 
 ## This file can contain arbitrary Python code, e.g.:
-# from datetime import datetime
-# now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-# BANNER_TOP = f'<marquee width="200px">This instance started on {now}.</marquee>'
+from datetime import datetime
+now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+BANNER_TOP = f'<marquee width="800px">ESTA É UMA VERSÃO DE TESTES PARA DESENVOLVIMENTO DE PLUGINS. ESTE Servidor FOI instanciado as {now} UTC.</marquee>'

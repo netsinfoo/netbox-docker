@@ -1,0 +1,29 @@
+Alterações no novo netbox 2.10
+
+No container netbox
+	- O python agora provem de uma venv dentro da pasta netbox
+
+
+
+Views
+	- Houve uma mudança e as utilities.views foram reduzidas. Suas principais views
+	agora estão em generic.views from netbox.views import generic
+	- Funçoes que utilizam o queryset necessitam de um PermissionRequiredMixin
+	- Os templates utilities mudaram de lugar {% extends 'generic/object_edit.html' %}
+
+
+
+
+
+
+
+
+
+===========================TO DO+===================================================
+REGISTROS
+- Corrigir as buscas
+
+VIEWS
+- Adicionar os bulk_import
+
+

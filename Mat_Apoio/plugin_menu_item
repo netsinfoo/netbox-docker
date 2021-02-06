@@ -1,0 +1,20 @@
+PluginMenuItem(
+        link='plugins:sdns:resp_list',
+        link_text='Resps',
+        permissions=[],
+        buttons=(
+            PluginMenuButton(
+                link='plugins:sdns:resp_add',
+                title='Add a new Resp',
+                icon_class='mdi mdi-plus-thick',
+                color=ButtonColorChoices.GREEN,
+            ),
+            PluginMenuButton(
+                link='plugins:sdns:resp_add',
+                title='Import news resps',
+                icon_class='mdi mdi-database-import-outline',
+                color=ButtonColorChoices.BLUE,
+                permissions=['sdns.add_resp']
+            ),
+        )
+    )
