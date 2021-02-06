@@ -19,11 +19,11 @@
 ## NAPALM optional arguments (see http://napalm.readthedocs.io/en/latest/support/#optional-arguments). Arguments must
 ## be provided as a dictionary.
 # NAPALM_ARGS = {}
-
+PLUGINS = []
 
 ## Enable installed plugins. Add the name of each plugin to the list.
 # from netbox.configuration.configuration import PLUGINS
-# PLUGINS.append('my_plugin')
+PLUGINS.append('sdns')
 
 ## Plugins configuration settings. These settings are used by various plugins that the user may have installed.
 ## Each key in the dictionary is the name of an installed plugin and its value is a dictionary of settings.
@@ -54,4 +54,6 @@ TIME_ZONE = 'America/Recife'
 ## This file can contain arbitrary Python code, e.g.:
 from datetime import datetime
 now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-BANNER_TOP = f'<marquee width="800px">ESTA É UMA VERSÃO DE TESTES PARA DESENVOLVIMENTO DE PLUGINS. ESTE Servidor FOI instanciado as {now} UTC.</marquee>'
+BANNER_TOP = f'<marquee width="800px">ESTA É UMA VERSÃO DE TESTES PARA DESENVOLVIMENTO DE PLUGINS. PARA TODOS EFEITOS ESTA INSTANCIA NÃO SERÁ USADA EM PRODUÇÃO. rodando desde as {now} UTC.</marquee>'
+
+BANNER_BOTTOM = f'<marquee width="800px">DESENVOLVIDO POR MANOEL BEZERRA  -  TODOS OS DIREITOS RESERVADOS </marquee>'
