@@ -48,6 +48,7 @@ PLUGINS.append('sdns')
 #     'AWS_S3_REGION_NAME': 'eu-west-1',
 # }
 DEBUG = TEMPLATE_DEBUG = True
+DEVELOPER = True
 TIME_ZONE = 'America/Recife'
 
 
@@ -56,4 +57,4 @@ from datetime import datetime
 now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 BANNER_TOP = f'<marquee width="800px">ESTA É UMA VERSÃO DE TESTES PARA DESENVOLVIMENTO DE PLUGINS. PARA TODOS EFEITOS ESTA INSTANCIA NÃO SERÁ USADA EM PRODUÇÃO. rodando desde as {now} UTC.</marquee>'
 
-BANNER_BOTTOM = f'<marquee width="800px">DESENVOLVIDO POR MANOEL BEZERRA  -  TODOS OS DIREITOS RESERVADOS </marquee>'
+BANNER_BOTTOM = f'<marquee width="800px">Area de desenvolvimento de  MANOEL BEZERRA  -  TODOS OS DIREITOS RESERVADOS </marquee>'
